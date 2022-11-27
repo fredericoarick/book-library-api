@@ -1,0 +1,273 @@
+{
+	"info": {
+		"_postman_id": "517f2090-746c-414b-ac40-37c02d67e89c",
+		"name": "book-library-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5786472"
+	},
+	"item": [
+		{
+			"name": "insert customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cpf\": \"11122233344\",\r\n    \"name\": \"João da Silva\",\r\n    \"birthDate\": \"2000-01-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/customer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list all customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/customer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find customer by cpf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/customer/11122233344",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"11122233344"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Hobbit\",\r\n    \"author\": \"Tolkien\",\r\n    \"publicationDate\": \"1937-09-21\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/book",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list all books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/book",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find book by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/book/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add book copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/book/1/copy",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"1",
+						"copy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "withdraw book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerCpf\": \"11122233344\",\r\n    \"bookCopyId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/withdrawal",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"withdrawal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "renew book withdrawal",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/withdrawal/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"withdrawal",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "return book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/withdrawal/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"withdrawal",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list all active withdrawal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/withdrawal/active?cpf=11122233344",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"withdrawal",
+						"active"
+					],
+					"query": [
+						{
+							"key": "cpf",
+							"value": "11122233344"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list all returned withdrawal by cpf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/withdrawal/returned?cpf=11122233344",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"withdrawal",
+						"returned"
+					],
+					"query": [
+						{
+							"key": "cpf",
+							"value": "11122233344"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

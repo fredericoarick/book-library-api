@@ -1,5 +1,9 @@
 # Endpoints
 
+Uma coleção do [Postman](https://www.postman.com/) com exemplo de chamadas dos endpoints está disponível no arquivo `docs\book-library-api.postman_collection.json`.
+
+Abaixo, um detalhamento de cada endpoint
+
 ## Cliente
 
 ### Cadastrar um cliente
